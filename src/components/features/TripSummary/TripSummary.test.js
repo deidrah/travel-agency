@@ -36,7 +36,9 @@ describe('Component TripSummary', () => {
     expect(component.find('.tags span').at(2).text()).toEqual(expectedTags[2]);
   });
   it('should not render div tags if props tags is false', () => {
+    const expectedTags = ['tag1', 'tag2', 'tag3'];
     const component = shallow(<TripSummary image={'image'} tags={[]} name={'name'} cost={'cost'} days={1} id={'id'} />);
-    expect(component.hasClass('tags')).toBe(false);
+    const tagsDiv = component.find('.tags div');
+    expect(tagsDiv.exists(expectedTags)).toBe(false);
   });
 }); 
