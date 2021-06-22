@@ -1,0 +1,53 @@
+{
+  "orders": [
+    {
+      "car-rental": "suv",
+      "accommodation": "suite",
+      "features": [
+        "pool"
+      ],
+      "adults": "2",
+      "children": "3",
+      "name": "Adam",
+      "contact": "3434343",
+      "start-date": "2021-06-21T22:00:00.000Z",
+      "totalCost": "$185,783",
+      "tripId": "5cc1d10130dfa407e2e54e20",
+      "countryCode": "TUR",
+      "tripName": "Pleasant travel in cool Turkey",
+      "id": 1
+    },
+    {
+      "car-rental": "suv",
+      "accommodation": "hotel",
+      "features": [],
+      "adults": 1,
+      "children": 0,
+      "name": "",
+      "contact": "",
+      "start-date": "",
+      "totalCost": "$51,581",
+      "tripId": "5cc1d10130dfa407e2e54e20",
+      "countryCode": "TUR",
+      "tripName": "Pleasant travel in cool Turkey",
+      "id": 2
+    },
+    {
+      "car-rental": "luxury",
+      "accommodation": "suite",
+      "features": [
+        "pool"
+      ],
+      "adults": "3",
+      "children": "2",
+      "name": "fdsfs",
+      "contact": "343434",
+      "start-date": "2021-06-08T22:00:00.000Z",
+      "totalCost": "$212,723",
+      "tripId": "5cc1d10130dfa407e2e54e20",
+      "countryCode": "TUR",
+      "tripName": "Pleasant travel in cool Turkey",
+      "id": 3
+    }
+  ]
+}
