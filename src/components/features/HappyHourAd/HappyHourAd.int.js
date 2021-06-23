@@ -1,6 +1,5 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-
 import HappyHourAd from './HappyHourAd';
 
 const select = {
@@ -9,39 +8,16 @@ const select = {
 };
 
 const mockProps = {
-  title: 'Lorem ipsum',
-  promoDescription: 'Lorem Ipsum dolor',
+  title: 'title',
+  promoDescription: 'promoDescription',
 };
-
-beforeAll(() => {
-  const utilsModule = jest.requireActual('../../../utils/formatTime.js');
-  utilsModule.formatTime = jest.fn(seconds => seconds);
-});
-
-describe('Component HappyHourAd', () => {
-  it('should render without crashing', () => {
-    const component = shallow(<HappyHourAd />);
-    expect(component).toBeTruthy();
-  });
-
-  it('should render title and description', () => {
-    const component = shallow(<HappyHourAd />);
-    expect(component.exists(select.title)).toEqual(true);
-    expect(component.exists(select.promoDescription)).toEqual(true);
-  });
-
-  it('should render title props', () => {
-    const component = shallow(<HappyHourAd {...mockProps} />);
-    expect(component.find(select.title).text()).toEqual(mockProps.title);
-  });
-});
 
 const trueDate = Date;
 
 const mockDate = customDate => class extends Date {
   constructor(...args) {
     if (args.length) {
-      super(...args); 
+      super(...args);
     } else {
       super(customDate);
     }
@@ -93,16 +69,4 @@ describe('Component HappyHourAd with mocked Date and delay', () => {
   checkDescriptionAfterTime('11:57:58', 2, '120');
   checkDescriptionAfterTime('11:59:58', 1, '1');
   checkDescriptionAfterTime('13:00:00', 60 * 60, 22 * 60 * 60 + '');
-});
-
-describe('Component HappyHourAd with mocked Date in promoDescription', () => {
-  checkDescriptionAtTime('12:00:00', mockProps.promoDescription);
-  checkDescriptionAtTime('12:30:00', mockProps.promoDescription);
-  checkDescriptionAtTime('12:59:59', mockProps.promoDescription);
-});
-
-describe('Component HappyHourAd with mocked Date expect promoDescription', () => {
-  checkDescriptionAfterTime('11:57:58', 2, '120');
-  checkDescriptionAfterTime('11:59:58', 1, '1');
-  checkDescriptionAfterTime('11:59:59', 1, mockProps.promoDescription);
 });
